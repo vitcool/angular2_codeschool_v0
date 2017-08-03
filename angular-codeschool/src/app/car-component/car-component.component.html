@@ -2,10 +2,13 @@
   car-component works!
 </p>
 <div>There are {{totalCars()}} at this page</div>
-<ul *ngIf="cars.length > 0">
-  <li *ngFor="let car of this.cars">
+<div *ngIf="cars.length > 0">
+  <div *ngFor="let car of this.cars" [class.featured]="car.featured">
+    <div class="photo">
+      <img [src]="car.image">
+    </div>
     <div> {{car.vendor | uppercase }} </div>
     <div> {{car.model }}</div>
     <div> {{car.price | currency:'USD':true}}</div>
-  </li>
-</ul>
+  </div>
+</div>

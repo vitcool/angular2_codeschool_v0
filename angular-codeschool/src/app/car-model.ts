@@ -3,4 +3,6 @@ export class CarModel {
     vendor: string;
     model: string;
     price: number;
+    image: string;
+    featured: boolean;
 }
