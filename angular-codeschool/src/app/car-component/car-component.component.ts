@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
+import { FormsModule }   from '@angular/forms';
+
 import { CarModel } from "../car-model";
 import { CARS } from "../mocks";
+
 
 @Component({
   selector: "app-car-component",
@@ -14,8 +17,12 @@ export class CarComponentComponent implements OnInit {
   ngOnInit() {
     this.cars = CARS;
   }
-  
+
   totalCars() {
     return this.cars.length;
+  }
+
+  increaseNumber(car){
+    car.number++;
   }
 }

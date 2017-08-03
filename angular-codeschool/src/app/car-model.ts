@@ -5,4 +5,5 @@ export class CarModel {
     price: number;
     image: string;
     featured: boolean;
+    number: number;
 }

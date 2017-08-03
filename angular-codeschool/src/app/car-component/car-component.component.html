@@ -5,10 +5,11 @@
 <div *ngIf="cars.length > 0">
   <div *ngFor="let car of this.cars" [class.featured]="car.featured">
     <div class="photo">
-      <img [src]="car.image">
+      <img [src]="car.image" (click)="increaseNumber(car);"><!--[] - html to js binding, () - js to html binding-->
     </div>
     <div> {{car.vendor | uppercase }} </div>
     <div> {{car.model }}</div>
     <div> {{car.price | currency:'USD':true}}</div>
+    <input type="text" [(ngModel)]="car.number"><!--two-way binding-->
   </div>
 </div>

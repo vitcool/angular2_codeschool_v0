@@ -7,7 +7,8 @@ export const CARS: CarModel[] = [
       "model": "Golf V",
       "price": 8000,
       "image": "assets/images/golf.jpg",
-      "featured": true
+      "featured": true,
+      "number": 0
     },
     {
       "id": 1,
@@ -15,5 +16,6 @@ export const CARS: CarModel[] = [
       "model": "Astra",
       "price": 7300,
       "image": "assets/images/astra.jpg",
-      "featured": false
+      "featured": false,
+      "number": 0
     }];
