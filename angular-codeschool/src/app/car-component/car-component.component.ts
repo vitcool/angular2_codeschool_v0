@@ -1,34 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import { CarModel } from "../car-model";
+import { CARS } from "../mocks";
 
 @Component({
-  selector: 'app-car-component',
-  templateUrl: './car-component.component.html',
-  styleUrls: ['./car-component.component.css']
+  selector: "app-car-component",
+  templateUrl: "./car-component.component.html",
+  styleUrls: ["./car-component.component.css"]
 })
 export class CarComponentComponent implements OnInit {
-
-  constructor() { }
+  cars: CarModel[];
+  constructor() {}
 
   ngOnInit() {
+    this.cars = CARS;
   }
-
-  cars: CarModel[] = [
-    {
-      "id": 0,
-      "vendor":"VW", 
-      "model": "Golf V",
-      "price": 8000
-    },
-    {
-      "id": 1,
-      "vendor":"Opel", 
-      "model": "Astra",
-      "price": 7300
-    }];
-
-    totalCars(){
-      return this.cars.length;
-    }
-
+  
+  totalCars() {
+    return this.cars.length;
+  }
 }
