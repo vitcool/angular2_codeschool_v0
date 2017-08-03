@@ -4,11 +4,5 @@
     Hello, {{title}}!
   </h1>
   <div>There are {{totalCars()}} at this page</div>
-  <ul *ngIf="cars.length > 0">
-    <li *ngFor="let car of cars">
-      <div> {{car.vendor | uppercase }} </div>
-      <div> {{car.model }}</div>
-      <div> {{car.price | currency:'USD':true}}</div>
-    </li>
-  </ul>
+  <app-car-component></app-car-component>
 </div>
