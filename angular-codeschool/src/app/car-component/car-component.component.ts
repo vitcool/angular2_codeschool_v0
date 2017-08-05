@@ -1,9 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { FormsModule }   from '@angular/forms';
-
 import { CarModel } from "../car-model";
-import { CARS } from "../mocks";
-
+import { CarDataService } from "../car-data.service";
 
 @Component({
   selector: "app-car-component",
@@ -12,17 +9,21 @@ import { CARS } from "../mocks";
 })
 export class CarComponentComponent implements OnInit {
   cars: CarModel[];
-  constructor() {}
+  constructor(private carDataService: CarDataService) {}
 
   ngOnInit() {
-    this.cars = CARS;
+    this.carDataService.getClassParts().subscribe(cars => (this.cars = cars));
   }
 
   totalCars() {
-    return this.cars.length;
+    let number = 0;
+    if (Array.isArray(this.cars)) {
+      number = this.cars.length;
+    }
+    return 0;
   }
 
-  increaseNumber(car){
+  increaseNumber(car) {
     car.number++;
   }
 }

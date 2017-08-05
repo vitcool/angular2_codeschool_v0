@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CarComponentComponent } from './car-component/car-component.component';
-
+import { HttpModule } from '@angular/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -11,7 +11,8 @@ import { CarComponentComponent } from './car-component/car-component.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
